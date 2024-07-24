@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private Animator animator; // Referência ao Animator
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>(); // Inicializa o Animator
     }
 
     void Update()
@@ -27,10 +29,19 @@ public class Player : MonoBehaviour
         if (entradaMovimento > 0)
         {
             spriteRenderer.flipX = false;
+            animator.SetBool("CorrerDireita", true);
+            animator.SetBool("CorrerEsquerda", false);
         }
         else if (entradaMovimento < 0)
         {
             spriteRenderer.flipX = true;
+            animator.SetBool("CorrerDireita", false);
+            animator.SetBool("CorrerEsquerda", true);
+        }
+        else
+        {
+            animator.SetBool("CorrerDireita", false);
+            animator.SetBool("CorrerEsquerda", false);
         }
 
         // Pular
