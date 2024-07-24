@@ -9,13 +9,11 @@ public class Player : MonoBehaviour
     private bool estaNoChao;
 
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
     private Animator animator; // Referência ao Animator
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); // Inicializa o Animator
     }
 
@@ -25,16 +23,14 @@ public class Player : MonoBehaviour
         float entradaMovimento = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(entradaMovimento * velocidadeMovimento, rb.velocity.y);
 
-        // Alternar direção do sprite baseado na direção da movimentação
+        // Controla a animação de acordo com a direção do movimento
         if (entradaMovimento > 0)
         {
-            spriteRenderer.flipX = false;
             animator.SetBool("CorrerDireita", true);
             animator.SetBool("CorrerEsquerda", false);
         }
         else if (entradaMovimento < 0)
         {
-            spriteRenderer.flipX = true;
             animator.SetBool("CorrerDireita", false);
             animator.SetBool("CorrerEsquerda", true);
         }
