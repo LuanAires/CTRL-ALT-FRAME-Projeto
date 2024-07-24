@@ -28,21 +28,21 @@ public class Player : MonoBehaviour
         // Alternar direção do sprite baseado na direção da movimentação
         if (entradaMovimento > 0)
         {
-<<<<<<< HEAD
+
             
-=======
+
             spriteRenderer.flipX = false;
->>>>>>> d9067bcae7cb147bb2976d21f30f0d24c047ad84
+
             animator.SetBool("CorrerDireita", true);
             animator.SetBool("CorrerEsquerda", false);
         }
         else if (entradaMovimento < 0)
         {
-<<<<<<< HEAD
+
             
-=======
+
             spriteRenderer.flipX = true;
->>>>>>> d9067bcae7cb147bb2976d21f30f0d24c047ad84
+
             animator.SetBool("CorrerDireita", false);
             animator.SetBool("CorrerEsquerda", true);
         }
