@@ -74,3 +74,5 @@ My project/Logs/shadercompiler-UnityShaderCompiler.exe7.log
 My project/Logs/shadercompiler-UnityShaderCompiler.exe8.log
 My project/Logs/shadercompiler-UnityShaderCompiler.exe9.log
 /My project/Logs
+*.log
+*.log
