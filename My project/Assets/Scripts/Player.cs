@@ -9,14 +9,12 @@ public class Player : MonoBehaviour
     private bool estaNoChao;
 
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
-    private Animator animator; // Referência ao Animator
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>(); // Inicializa o Animator
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -25,31 +23,14 @@ public class Player : MonoBehaviour
         float entradaMovimento = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(entradaMovimento * velocidadeMovimento, rb.velocity.y);
 
-        // Alternar direção do sprite baseado na direção da movimentação
-        if (entradaMovimento > 0)
+        // Atualizar o parâmetro de velocidade no Animator
+        animator.SetFloat("VelocidadeHorizontal", entradaMovimento);
+
+        // Verificar direção para espelhar o sprite
+        if (entradaMovimento != 0)
         {
-
-            
-
-            spriteRenderer.flipX = false;
-
-            animator.SetBool("CorrerDireita", true);
-            animator.SetBool("CorrerEsquerda", false);
-        }
-        else if (entradaMovimento < 0)
-        {
-
-            
-
-            spriteRenderer.flipX = true;
-
-            animator.SetBool("CorrerDireita", false);
-            animator.SetBool("CorrerEsquerda", true);
-        }
-        else
-        {
-            animator.SetBool("CorrerDireita", false);
-            animator.SetBool("CorrerEsquerda", false);
+            // Se entradaMovimento for maior que 0, virar para direita, se menor, para esquerda
+            transform.localScale = new Vector3(Mathf.Sign(entradaMovimento), 1, 1);
         }
 
         // Pular
@@ -58,7 +39,6 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, forcaPulo);
         }
     }
-
 
     private void OnCollisionEnter2D(Collision2D colisao)
     {

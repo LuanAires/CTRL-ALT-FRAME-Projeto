@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 1140366514}
   - component: {fileID: 1140366520}
   - component: {fileID: 1140366519}
-  - component: {fileID: 1140366518}
   - component: {fileID: 1140366517}
   m_Layer: 0
   m_Name: "'E'+(C\xB2)+Iddle"
@@ -155,7 +154,7 @@ Animator:
   m_GameObject: {fileID: 1140366513}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b26ef7ab5c1d1c488c88e2607726de5, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea3c25dd2a751de489e169a37597bc3d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -234,20 +233,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1140366517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140366513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5df7a33bda236448d44e1078776631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadeMovimento: 5
-  forcaPulo: 5
---- !u!114 &1140366518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
